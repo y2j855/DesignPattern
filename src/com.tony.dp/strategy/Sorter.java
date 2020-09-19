@@ -11,22 +11,28 @@ package com.tony.dp.strategy;
  * 但还是有问题，如果我排序方法的业务逻辑换了，我不用重量排序，用身高排序怎么办？
  * 最简单的办法是修改实现了Comparable接口的方法。如果不修改方法就要引入Comparator概念，也就是策略模式。
  */
-public class Sorter {
-    public void sort(Comparable[] arr){
-        for (int i = 0; i < arr.length; i++) {
+public class Sorter<T> {
+    private Comparator<T> c;
+
+    public Sorter(Comparator<T> c) {
+        this.c = c;
+    }
+
+    public void sort(T[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
             int minPos = i;
 
-            for (int j = i+1; j < arr.length; j++) {
-                minPos = arr[i].compareTo(arr[minPos])< 1 ? j : minPos;
+            for (int j = i + 1; j < arr.length; j++) {
+                minPos = c.compareTo(arr[j], arr[minPos]) == -1 ? j : minPos;
             }
 
-            swap(arr,i,minPos);
+            swap(arr, i, minPos);
         }
     }
 
-    private void swap(Comparable[] arr, int i, int j) {
-        Comparable tmep = arr[i];
+    private void swap(T[] arr, int i, int j) {
+        T temp = arr[i];
         arr[i] = arr[j];
-        arr[j] = tmep;
+        arr[j] = temp;
     }
 }
