@@ -8,7 +8,7 @@ package com.tony.dp.strategy;
 public class DogWeightComparator implements Comparator<Dog> {
 
     @Override
-    public int compareTo(Dog t1, Dog t2) {
+    public int compare(Dog t1, Dog t2) {
         if (t1.weight < t2.weight) {
             return -1;
         } else if (t1.weight > t2.weight) {

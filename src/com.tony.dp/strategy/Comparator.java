@@ -6,5 +6,5 @@ package com.tony.dp.strategy;
  * Description:
  */
 public interface Comparator<T> {
-    int compareTo(T t1,T t2);
+    int compare(T t1, T t2);
 }

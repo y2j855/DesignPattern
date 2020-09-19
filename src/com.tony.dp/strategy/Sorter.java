@@ -12,18 +12,13 @@ package com.tony.dp.strategy;
  * 最简单的办法是修改实现了Comparable接口的方法。如果不修改方法就要引入Comparator概念，也就是策略模式。
  */
 public class Sorter<T> {
-    private Comparator<T> c;
 
-    public Sorter(Comparator<T> c) {
-        this.c = c;
-    }
-
-    public void sort(T[] arr) {
+    public void sort(T[] arr,Comparator<T> comparator) {
         for (int i = 0; i < arr.length - 1; i++) {
             int minPos = i;
 
             for (int j = i + 1; j < arr.length; j++) {
-                minPos = c.compareTo(arr[j], arr[minPos]) == -1 ? j : minPos;
+                minPos = comparator.compare(arr[j], arr[minPos]) == -1 ? j : minPos;
             }
 
             swap(arr, i, minPos);
