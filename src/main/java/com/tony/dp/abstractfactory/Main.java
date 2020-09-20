@@ -6,4 +6,10 @@ package com.tony.dp.abstractfactory;
  * Description:
  */
 public class Main {
+    public static void main(String[] args) {
+        AbstractFactory factory = new MagicFactory();
+        factory.createVehicle().go();
+        factory.createWeapon().shoot();
+        factory.createFood().printName();
+    }
 }

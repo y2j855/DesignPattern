@@ -5,5 +5,9 @@ package com.tony.dp.abstractfactory;
  * Create Time : 2020/9/20 22:06
  * Description:
  */
-public class AbstractFactory {
+public abstract class AbstractFactory {
+    abstract Vehicle createVehicle();
+    abstract Food createFood();
+    abstract Weapon createWeapon();
+
 }
