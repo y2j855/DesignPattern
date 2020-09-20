@@ -1,4 +1,4 @@
-package com.tony.dp.factory;
+package com.tony.dp.factorymethod;
 
 /**
  * @author: Tony.Chen
@@ -7,7 +7,7 @@ package com.tony.dp.factory;
  */
 public class Main {
     public static void main(String[] args) {
-        Moveable m = new CarFactory().create();
+        Moveable m = new PlaneFactory().create();
         m.go();
     }
 }

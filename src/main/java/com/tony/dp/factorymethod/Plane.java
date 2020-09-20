@@ -1,4 +1,4 @@
-package com.tony.dp.factory;
+package com.tony.dp.factorymethod;
 
 public class Plane implements Moveable {
     @Override

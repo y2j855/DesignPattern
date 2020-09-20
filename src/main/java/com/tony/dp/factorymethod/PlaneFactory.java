@@ -5,5 +5,9 @@ package com.tony.dp.factorymethod;
  * Create Time : 2020/9/20 21:04
  * Description:
  */
-public class PlaneFactory {
+public class PlaneFactory implements FactoryMethod{
+    @Override
+    public Moveable create() {
+        return new Plane();
+    }
 }
