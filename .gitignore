@@ -27,4 +27,4 @@ hs_err_pid*
 Thumbs.db
 
 .idea/
-out/
+target/
