@@ -28,3 +28,5 @@ Thumbs.db
 
 .idea/
 target/
+src/main/resources/
+src/test/

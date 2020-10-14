@@ -24,6 +24,7 @@ public class Main {
                 return 0;
             }
         });
+
         System.out.println(Arrays.toString(cats));
     }
 }
