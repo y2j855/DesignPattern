@@ -20,6 +20,10 @@ class Child {
         observers.add(new Dad());
         observers.add(new Mum());
         observers.add(new Dog());
+        observers.add(event -> {
+            System.out.println("");
+        });
+        //hook callback function
     }
 
     public boolean isCry() {
