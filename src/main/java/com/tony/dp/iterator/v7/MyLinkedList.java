@@ -1,17 +1,17 @@
-package com.tony.dp.iterator.v5;
+package com.tony.dp.iterator.v7;
 
 /**
  * @author: Tony.Chen
  * Create Time : 2020/10/19 21:43
  * Description:
  */
-public class MyLinkedList implements MyCollection {
+public class MyLinkedList<E> implements MyCollection<E> {
     private Node head;
     private Node tail;
     private int size;
 
     @Override
-    public void add(Object o){
+    public void add(E o){
         Node n = new Node(o);
 
         if(head == null){
@@ -30,20 +30,20 @@ public class MyLinkedList implements MyCollection {
     }
 
     @Override
-    public MyIterator iterator() {
+    public MyIterator<E> iterator() {
         return new MyLinkedListIterator();
     }
 
-    private class Node{
-        private Object o;
-        private Node next;
+    private class Node<E>{
+        private E o;
+        private Node<E> next;
 
-        public Node(Object o) {
+        public Node(E o) {
             this.o = o;
         }
     }
 
-    private class MyLinkedListIterator implements MyIterator {
+    private class MyLinkedListIterator<E> implements MyIterator<E> {
         private int currentIndex = 0;
         @Override
         public boolean hasNext() {
@@ -54,10 +54,10 @@ public class MyLinkedList implements MyCollection {
         }
 
         @Override
-        public Object next() {
-            Object o = null;
+        public E next() {
+            E o = null;
             if(head != null){
-                o = head.o;
+                o = (E) head.o;
                 head = head.next;
                 currentIndex++;
             }

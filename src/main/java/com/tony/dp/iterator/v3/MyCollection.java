@@ -6,4 +6,6 @@ package com.tony.dp.iterator.v3;
  * Description:
  */
 public interface MyCollection {
+    void add(Object o);
+    int size();
 }

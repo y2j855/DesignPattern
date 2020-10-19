@@ -1,12 +1,12 @@
-package com.tony.dp.iterator.v5;
+package com.tony.dp.iterator.v7;
 
 /**
  * @author: Tony.Chen
  * Create Time : 2020/10/19 21:42
  * Description:
  */
-public interface MyCollection {
-    void add(Object o);
+public interface MyCollection<E> {
+    void add(E element);
     int size();
     MyIterator iterator();
 }

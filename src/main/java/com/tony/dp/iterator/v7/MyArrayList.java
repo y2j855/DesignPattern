@@ -1,19 +1,19 @@
-package com.tony.dp.iterator.v5;
+package com.tony.dp.iterator.v7;
 
 /**
  * @author: Tony.Chen
  * Create Time : 2020/10/19 21:43
  * Description:
  */
-public class MyArrayList implements MyCollection {
-    Object[] objects = new Object[10];
+public class MyArrayList<E> implements MyCollection<E> {
+    E[] objects = (E[]) new Object[10];
     //objects中下一个空位置在哪，目前容器中有多少个元素
     private int index = 0;
 
     @Override
-    public void add(Object o) {
+    public void add(E o) {
         if (index == objects.length) {
-            Object[] newObjects = new Object[objects.length * 2];
+            E[] newObjects = (E[]) new Object[objects.length * 2];
             System.arraycopy(objects, 0, newObjects, 0, objects.length);
             objects = newObjects;
         }
@@ -27,11 +27,11 @@ public class MyArrayList implements MyCollection {
     }
 
     @Override
-    public MyIterator iterator() {
+    public MyIterator<E> iterator() {
         return new MyArrayListIterator();
     }
 
-    private class MyArrayListIterator implements MyIterator {
+    private class MyArrayListIterator<E> implements MyIterator<E> {
         private int currentIndex = 0;
         @Override
         public boolean hasNext() {
@@ -42,8 +42,8 @@ public class MyArrayList implements MyCollection {
         }
 
         @Override
-        public Object next() {
-            return objects[currentIndex++];
+        public E next() {
+            return (E) objects[currentIndex++];
         }
     }
 }

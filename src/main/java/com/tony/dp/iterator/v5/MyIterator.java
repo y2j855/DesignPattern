@@ -6,4 +6,6 @@ package com.tony.dp.iterator.v5;
  * Description:
  */
 public interface MyIterator {
+    boolean hasNext();
+    Object next();
 }

@@ -1,4 +1,4 @@
-package com.tony.dp.iterator.v4;
+package com.tony.dp.iterator.v5;
 
 /**
  * @author: Tony.Chen
@@ -8,4 +8,5 @@ package com.tony.dp.iterator.v4;
 public interface MyCollection {
     void add(Object o);
     int size();
+    MyIterator iterator();
 }

@@ -1,4 +1,4 @@
-package com.tony.dp.iterator.v4;
+package com.tony.dp.iterator.v5;
 
 /**
  * @author: Tony.Chen
@@ -24,5 +24,26 @@ public class MyArrayList implements MyCollection {
     @Override
     public int size() {
         return index;
+    }
+
+    @Override
+    public MyIterator iterator() {
+        return new MyArrayListIterator();
+    }
+
+    private class MyArrayListIterator implements MyIterator {
+        private int currentIndex = 0;
+        @Override
+        public boolean hasNext() {
+            if(currentIndex >= index){
+                return false;
+            }
+            return true;
+        }
+
+        @Override
+        public Object next() {
+            return objects[currentIndex++];
+        }
     }
 }

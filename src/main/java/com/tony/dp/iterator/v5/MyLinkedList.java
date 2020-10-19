@@ -1,4 +1,4 @@
-package com.tony.dp.iterator.v4;
+package com.tony.dp.iterator.v5;
 
 /**
  * @author: Tony.Chen
@@ -29,12 +29,39 @@ public class MyLinkedList implements MyCollection {
         return size;
     }
 
+    @Override
+    public MyIterator iterator() {
+        return new MyLinkedListIterator();
+    }
+
     private class Node{
         private Object o;
         private Node next;
 
         public Node(Object o) {
             this.o = o;
+        }
+    }
+
+    private class MyLinkedListIterator implements MyIterator {
+        private int currentIndex = 0;
+        @Override
+        public boolean hasNext() {
+            if(currentIndex >= size){
+                return false;
+            }
+            return true;
+        }
+
+        @Override
+        public Object next() {
+            Object o = null;
+            if(head != null){
+                o = head.o;
+                head = head.next;
+                currentIndex++;
+            }
+            return o;
         }
     }
 }
