@@ -43,6 +43,11 @@ public class Tank implements Movable {
         }
     }
 
+    @Override
+    public void test() {
+        System.out.println("test many method");
+    }
+
     public static void main(String[] args) {
         Tank tank = new Tank();
 
@@ -58,6 +63,7 @@ public class Tank implements Movable {
          * 它会调用LogHandler的invoke()方法
          */
         m.move();
+        m.test();
     }
 }
 
@@ -73,6 +79,9 @@ class LogHandler implements InvocationHandler {
         before();
         Object o = method.invoke(m, args);
         after();
+        if(method.getName().equals("test")){
+            test();
+        }
         return o;
     }
 
@@ -83,8 +92,13 @@ class LogHandler implements InvocationHandler {
     private void after() {
         System.out.println("method end!");
     }
+
+    private void test(){
+        System.out.println("method test message");
+    }
 }
 
 interface Movable {
     void move();
+    void test();
 }
