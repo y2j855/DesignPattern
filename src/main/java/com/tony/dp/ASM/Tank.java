@@ -6,4 +6,7 @@ package com.tony.dp.ASM;
  * Description:
  */
 public class Tank {
+    public void move(){
+        System.out.println("Tank Moving ClaClaCla...");
+    }
 }
