@@ -1,0 +1,24 @@
+@startuml
+
+abstract class Department
+class FADepartment
+class HRDepartment
+
+interface Employee
+class FulltimeEmployee
+class ParttimeEmployee
+
+class EmployeeList
+class Client
+
+Department <|-- FADepartment
+Department <|-- HRDepartment
+
+Employee <|.. FulltimeEmployee
+Employee <|.. ParttimeEmployee
+
+Employee --o EmployeeList
+
+Client .. Department
+Client .. EmployeeList
+@enduml
