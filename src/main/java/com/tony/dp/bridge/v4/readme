@@ -1,0 +1,7 @@
+使用桥接模式：
+分离抽象与具体实现，让他们可以独自发展
+Gift -> WarmGift ColdGift WildGift
+GiftImpl -> Flower Ring Car
+
+用聚合的方式(桥)连接抽象和具体
+Gift聚合GIftImpl
