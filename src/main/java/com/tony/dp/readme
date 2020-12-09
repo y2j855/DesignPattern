@@ -1,0 +1,2 @@
+mediator 中介者/调停者   坦克GameModel就是实现了此模式
+facade 门面模式 坦克GameModel就是实现此模式
